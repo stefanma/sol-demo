@@ -102,7 +102,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/HelloWeb3s.sol": "HelloWeb3s"
+			"contracts/HelloWeb3s1.sol": "HelloWeb3s"
 		},
 		"evmVersion": "prague",
 		"libraries": {},
@@ -116,7 +116,7 @@
 		"remappings": []
 	},
 	"sources": {
-		"contracts/HelloWeb3s.sol": {
+		"contracts/HelloWeb3s1.sol": {
 			"keccak256": "0x8d912ed71d70179ae23bf4ae3b244f08c9a878d8d1bede9f4a90913f6f5fa56f",
 			"license": "MIT",
 			"urls": [
