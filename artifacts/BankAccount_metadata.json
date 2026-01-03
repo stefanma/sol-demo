@@ -11,23 +11,17 @@
 					{
 						"indexed": true,
 						"internalType": "address",
-						"name": "owner",
-						"type": "address"
-					},
-					{
-						"indexed": true,
-						"internalType": "address",
-						"name": "spender",
+						"name": "user",
 						"type": "address"
 					},
 					{
 						"indexed": false,
 						"internalType": "uint256",
-						"name": "value",
+						"name": "amount",
 						"type": "uint256"
 					}
 				],
-				"name": "Approval",
+				"name": "Deposit",
 				"type": "event"
 			},
 			{
@@ -48,7 +42,7 @@
 					{
 						"indexed": false,
 						"internalType": "uint256",
-						"name": "value",
+						"name": "amount",
 						"type": "uint256"
 					}
 				],
@@ -56,19 +50,33 @@
 				"type": "event"
 			},
 			{
+				"anonymous": false,
 				"inputs": [
 					{
+						"indexed": true,
 						"internalType": "address",
-						"name": "owner",
+						"name": "user",
 						"type": "address"
 					},
 					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "Withdraw",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
 						"internalType": "address",
-						"name": "spender",
+						"name": "",
 						"type": "address"
 					}
 				],
-				"name": "allowance",
+				"name": "balances",
 				"outputs": [
 					{
 						"internalType": "uint256",
@@ -83,35 +91,16 @@
 				"inputs": [
 					{
 						"internalType": "address",
-						"name": "spender",
+						"name": "user",
 						"type": "address"
 					},
 					{
 						"internalType": "uint256",
-						"name": "amount",
+						"name": "rate",
 						"type": "uint256"
 					}
 				],
-				"name": "approve",
-				"outputs": [
-					{
-						"internalType": "bool",
-						"name": "",
-						"type": "bool"
-					}
-				],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "address",
-						"name": "account",
-						"type": "address"
-					}
-				],
-				"name": "balanceOf",
+				"name": "calculateInterest",
 				"outputs": [
 					{
 						"internalType": "uint256",
@@ -124,22 +113,16 @@
 			},
 			{
 				"inputs": [],
-				"name": "totalSupply",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
+				"name": "deposit",
+				"outputs": [],
+				"stateMutability": "payable",
 				"type": "function"
 			},
 			{
 				"inputs": [
 					{
 						"internalType": "address",
-						"name": "recipient",
+						"name": "to",
 						"type": "address"
 					},
 					{
@@ -149,42 +132,20 @@
 					}
 				],
 				"name": "transfer",
-				"outputs": [
-					{
-						"internalType": "bool",
-						"name": "",
-						"type": "bool"
-					}
-				],
+				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
 				"inputs": [
 					{
-						"internalType": "address",
-						"name": "sender",
-						"type": "address"
-					},
-					{
-						"internalType": "address",
-						"name": "recipient",
-						"type": "address"
-					},
-					{
 						"internalType": "uint256",
 						"name": "amount",
 						"type": "uint256"
 					}
 				],
-				"name": "transferFrom",
-				"outputs": [
-					{
-						"internalType": "bool",
-						"name": "",
-						"type": "bool"
-					}
-				],
+				"name": "withdraw",
+				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
 			}
@@ -202,7 +163,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/MyCustomToken.sol": "IERC20"
+			"contracts/BankAccount.sol": "BankAccount"
 		},
 		"evmVersion": "prague",
 		"libraries": {},
@@ -216,12 +177,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"contracts/MyCustomToken.sol": {
-			"keccak256": "0x5f18961c8481c3c83015c8e45437b6d7f6e48462c2200acdc1a6498e4e1f5361",
+		"contracts/BankAccount.sol": {
+			"keccak256": "0x7efe8fe020aeece5b4a2b5393c009e0eaf7a8decaed26da8b946a2160ebaac61",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://9c0bac1a16cc022ab6122a80ce5b26a55ab71e70eb86b3c83dd1402d8b43ef3b",
-				"dweb:/ipfs/QmfW3j84j1XMHEg3s1fP6Ek3acg7yEsfXqzodJsKz1bTpm"
+				"bzz-raw://f95bf40b8f36e522041d4fe39b611fa3f6e17420602a37bd8057cdf28759ec61",
+				"dweb:/ipfs/QmRuK8QzkemkwpNe8FRSxZNZGyNSsVRcDVAqwdLk7Yfn2V"
 			]
 		}
 	},

@@ -6,29 +6,20 @@
 	"output": {
 		"abi": [
 			{
-				"anonymous": false,
 				"inputs": [
 					{
-						"indexed": true,
-						"internalType": "address",
-						"name": "owner",
-						"type": "address"
-					},
-					{
-						"indexed": true,
-						"internalType": "address",
-						"name": "spender",
-						"type": "address"
-					},
-					{
-						"indexed": false,
 						"internalType": "uint256",
-						"name": "value",
+						"name": "_startTime",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_endTime",
 						"type": "uint256"
 					}
 				],
-				"name": "Approval",
-				"type": "event"
+				"stateMutability": "nonpayable",
+				"type": "constructor"
 			},
 			{
 				"anonymous": false,
@@ -36,39 +27,67 @@
 					{
 						"indexed": true,
 						"internalType": "address",
-						"name": "from",
-						"type": "address"
-					},
-					{
-						"indexed": true,
-						"internalType": "address",
-						"name": "to",
+						"name": "donor",
 						"type": "address"
 					},
 					{
 						"indexed": false,
 						"internalType": "uint256",
-						"name": "value",
+						"name": "amount",
 						"type": "uint256"
 					}
 				],
-				"name": "Transfer",
+				"name": "Donation",
 				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "donate",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
 			},
 			{
 				"inputs": [
 					{
 						"internalType": "address",
-						"name": "owner",
-						"type": "address"
-					},
-					{
-						"internalType": "address",
-						"name": "spender",
+						"name": "",
 						"type": "address"
 					}
 				],
-				"name": "allowance",
+				"name": "donations",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "donors",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "endTime",
 				"outputs": [
 					{
 						"internalType": "uint256",
@@ -83,35 +102,11 @@
 				"inputs": [
 					{
 						"internalType": "address",
-						"name": "spender",
-						"type": "address"
-					},
-					{
-						"internalType": "uint256",
-						"name": "amount",
-						"type": "uint256"
-					}
-				],
-				"name": "approve",
-				"outputs": [
-					{
-						"internalType": "bool",
-						"name": "",
-						"type": "bool"
-					}
-				],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "address",
-						"name": "account",
+						"name": "_addr",
 						"type": "address"
 					}
 				],
-				"name": "balanceOf",
+				"name": "getDonation",
 				"outputs": [
 					{
 						"internalType": "uint256",
@@ -124,7 +119,38 @@
 			},
 			{
 				"inputs": [],
-				"name": "totalSupply",
+				"name": "getTopDonors",
+				"outputs": [
+					{
+						"internalType": "address[3]",
+						"name": "topAddresses",
+						"type": "address[3]"
+					},
+					{
+						"internalType": "uint256[3]",
+						"name": "topAmounts",
+						"type": "uint256[3]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "startTime",
 				"outputs": [
 					{
 						"internalType": "uint256",
@@ -136,55 +162,9 @@
 				"type": "function"
 			},
 			{
-				"inputs": [
-					{
-						"internalType": "address",
-						"name": "recipient",
-						"type": "address"
-					},
-					{
-						"internalType": "uint256",
-						"name": "amount",
-						"type": "uint256"
-					}
-				],
-				"name": "transfer",
-				"outputs": [
-					{
-						"internalType": "bool",
-						"name": "",
-						"type": "bool"
-					}
-				],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "address",
-						"name": "sender",
-						"type": "address"
-					},
-					{
-						"internalType": "address",
-						"name": "recipient",
-						"type": "address"
-					},
-					{
-						"internalType": "uint256",
-						"name": "amount",
-						"type": "uint256"
-					}
-				],
-				"name": "transferFrom",
-				"outputs": [
-					{
-						"internalType": "bool",
-						"name": "",
-						"type": "bool"
-					}
-				],
+				"inputs": [],
+				"name": "withdraw",
+				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
 			}
@@ -202,7 +182,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/MyCustomToken.sol": "IERC20"
+			"contracts/BeggingContract.sol": "BeggingContract"
 		},
 		"evmVersion": "prague",
 		"libraries": {},
@@ -216,12 +196,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"contracts/MyCustomToken.sol": {
-			"keccak256": "0x5f18961c8481c3c83015c8e45437b6d7f6e48462c2200acdc1a6498e4e1f5361",
+		"contracts/BeggingContract.sol": {
+			"keccak256": "0xfa7e9bc346654b908483f533aa25100707ec32420510c2a456b4bb7c37e009c3",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://9c0bac1a16cc022ab6122a80ce5b26a55ab71e70eb86b3c83dd1402d8b43ef3b",
-				"dweb:/ipfs/QmfW3j84j1XMHEg3s1fP6Ek3acg7yEsfXqzodJsKz1bTpm"
+				"bzz-raw://0067de65cfa048ed484bac9391b8ed30146083fc8c4a61fbe28acbefc77e51bd",
+				"dweb:/ipfs/QmUzeDh2weDHvDmTo3aYQS4s7avtSqm77UL5zQwuzen9YF"
 			]
 		}
 	},

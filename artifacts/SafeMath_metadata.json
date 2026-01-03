@@ -1,0 +1,45 @@
+{
+	"compiler": {
+		"version": "0.8.30+commit.73712a01"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/BankAccount.sol": "SafeMath"
+		},
+		"evmVersion": "prague",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/BankAccount.sol": {
+			"keccak256": "0x7efe8fe020aeece5b4a2b5393c009e0eaf7a8decaed26da8b946a2160ebaac61",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://f95bf40b8f36e522041d4fe39b611fa3f6e17420602a37bd8057cdf28759ec61",
+				"dweb:/ipfs/QmRuK8QzkemkwpNe8FRSxZNZGyNSsVRcDVAqwdLk7Yfn2V"
+			]
+		}
+	},
+	"version": 1
+}
